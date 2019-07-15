@@ -13,7 +13,7 @@
         <!--ViewFinder1-->
         <scene sceneID="zHG-51-cPW">
             <objects>
-                <tableViewController id="6Qi-AX-CxB" sceneMemberID="viewController">
+                <tableViewController id="6Qi-AX-CxB" customClass="PhotoTableViewController" customModule="viewFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qgp-8P-IXs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,6 +74,9 @@
                                 <rect key="frame" x="132" y="350" width="111" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save This Photo"/>
+                                <connections>
+                                    <action selector="savePhotoTapped:" destination="pGf-hl-cxc" eventType="touchUpInside" id="Dcu-lb-dpe"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ex3-tX-hJT">
                                 <rect key="frame" x="83" y="312" width="214" height="30"/>
@@ -82,7 +85,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="images-2" translatesAutoresizingMaskIntoConstraints="NO" id="vhY-26-eKf">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="vhY-26-eKf">
                                 <rect key="frame" x="72" y="154" width="236" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -119,6 +122,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="images-2" width="900" height="680"/>
+        <image name="image" width="900" height="680"/>
     </resources>
 </document>
