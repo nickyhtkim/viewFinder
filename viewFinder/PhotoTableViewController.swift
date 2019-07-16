@@ -71,8 +71,7 @@ class PhotoTableViewController: UITableViewController {
             }
         }
         
-        
-        
+    
 //        cell.textLabel?.text = "Nicky is cool"
 //        // Configure the cell...
 //
@@ -81,7 +80,22 @@ class PhotoTableViewController: UITableViewController {
         return cell
     }
     
-
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "moveToDetail", sender: photos[indexPath.row])
+    }
+    
+    override func prepare (for segue : UIStoryboardSegue, sender : Any?) {
+        
+        if segue.identifier == "moveToDetail" {
+            
+            if let photoDetailView = segue.destination as?  PhotoDetailViewController {
+                
+                if let photoToSend = sender as? Photos {
+                    
+                }
+            }
+        }
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
