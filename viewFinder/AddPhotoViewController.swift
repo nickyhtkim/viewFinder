@@ -14,6 +14,7 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
     
     @IBOutlet weak var imageView: UIImageView!
     
+   
     @IBOutlet weak var captionText: UITextField!
     
     
@@ -52,20 +53,19 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
 
             if let userImage = imageView.image {
                 if let userImageData = userImage.pngData() {
-                    [photoToSave.imageData = userImageData]
+                    photoToSave.imageData = userImageData
                 }
             }
-            
+        
+        
+            (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+        
+            navigationController?.popViewController(animated: true)
+        
+    
         }
-        
-        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
-        
-        navigationController?.popViewController(animated: true)
-        
     }
-    
-    
-    
+
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
     
         //update our photo w selcted photo
@@ -79,7 +79,10 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-    } }
+    }
+    
+    
+}
 
 
 
